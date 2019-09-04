@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Fabio",
+      "email": "fabio.react.dev@gmail.com",
+      "password": "yolo"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "username": "Paul",
+      "email": "fake@email.com",
+      "password": "yolo",
+      "id": 5
+    },
+    {
+      "username": "Marie",
+      "email": "fake@email.com",
+      "password": "yolo",
+      "id": 6
+    },
+    {
+      "username": "Jacques",
+      "email": "fake@email.com",
+      "password": "yolo",
+      "id": 7
+    },
+    {
+      "username": "Alice",
+      "email": "fake@email.com",
+      "password": "yolo",
+      "id": 8
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "React Application",
+      "author": "Fabio"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "some comment",
+      "postId": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
