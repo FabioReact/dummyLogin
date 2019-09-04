@@ -1,6 +1,17 @@
 import React, { Component } from 'react'
 
-class Login extends Component {
+const InputForm = (props) => {
+    const {field, type, onChangeInput} = props
+    console.log(type)
+    return (
+        <>
+            <label htmlFor={field}>{field}</label>
+            <input type={type} name={field} id={field} onChange={(event) => onChangeInput(event, field)} />
+        </>
+    )
+}
+
+class Register extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -18,8 +29,8 @@ class Login extends Component {
         e.preventDefault()
         const user = {
             username: this.state.username,
-            email: "fake@email.com",
-            password: "yolo"
+            email: this.state.email,
+            password: this.state.password
         }
         // const myHeaders = new Headers();
         const myInit = {
@@ -39,8 +50,8 @@ class Login extends Component {
         e.preventDefault()
         const user = {
             username: this.state.username,
-            email: "fake@email.com",
-            password: "yolo"
+            email: this.state.email,
+            password: this.state.password
         }
         const request = new XMLHttpRequest();
         request.open('POST', "http://localhost:3000/users/")
@@ -48,19 +59,20 @@ class Login extends Component {
         request.send(JSON.stringify(user))
     }
 
+    onChangeInput = (event, key) => {
+        this.setState({
+            [key]: event.target.value
+        })
+    }
+
     render() {
         return (
             <div>
-                <h1>Login Page</h1>
+                <h1>Register Page</h1>
                 <form>
-                    <label htmlFor="username">Username: </label>
-                    <input 
-                        type="text"
-                        id="username" placeholder="Enter your username"
-                        name="username"
-                        value={this.state.username}
-                        onChange={this.onChangeUsername}
-                    />
+                    <InputForm type="text" field="username" onChangeInput={this.onChangeInput} />
+                    <InputForm type="email" field="email" onChangeInput={this.onChangeInput} />
+                    <InputForm type="password" field="password" onChangeInput={this.onChangeInput} />
                     <button onClick={this.onSubmitForm}>Submit</button>
                 </form>
             </div>
@@ -68,4 +80,4 @@ class Login extends Component {
     }
 }
 
-export default Login
+export default Register

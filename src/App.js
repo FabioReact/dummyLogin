@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Login from './pages/Login'
+import Refister from './pages/Register'
 
 function App() {
   return (
